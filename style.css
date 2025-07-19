@@ -177,16 +177,23 @@ nav ul li a:hover::after{
 }
 
 .project-list{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
-    margin-top: 40px;
+    margin-top: 40px; */
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
 }
 
 .project{
-    border-radius: 10px;
     position:relative;
     overflow: hidden;
+    border-radius: 10px;
+    /* max-width: 380px; */
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .project img{
@@ -198,10 +205,27 @@ nav ul li a:hover::after{
 
 .project h3{
     text-align: center;
+    margin-bottom: 40px;
 }
 
 #ELISA{
-    height: 92.5%;
+    height: 600px;
+    width: 354px;
+}
+
+#InfinityScheduling{
+    height: 600px;
+    width: 600px;
+}
+
+#Battle{
+    height: 600px;
+    width: 354px;
+}
+
+#Quotes{
+    height: 580px;
+    width: 550px;
 }
 
 .layer{
@@ -258,10 +282,6 @@ nav ul li a:hover::after{
 
 .project:hover .layer{
     height: 98%;
-}
-
-.project:hover #l3{
-    height: 50%;
 }
 
 /* Contact */
@@ -392,18 +412,18 @@ nav .fas{
 }
 
 /* ELISA */
-.ELISA_INFO{
+.ELISA_INFO, .InfinityScheduling_INFO, .Battle_INFO, .Quotes_INFO{
     padding: 80px 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.ELISA_INFO .col1{
+.ELISA_INFO .col1, .InfinityScheduling_INFO .col1, .Battle_INFO .col1, .Quotes_INFO .col1{
     flex-basis: 35%;
 }
 
-.ELISA_INFO .col2{
+.ELISA_INFO .col2, .InfinityScheduling_INFO .col2, .Battle_INFO .col2, .Quotes_INFO .col2{
     flex-basis: 65%;
 }
 
@@ -414,12 +434,35 @@ nav .fas{
     left: 5%;
 }
 
-/* .ELISA_INFO img{
-    padding: 50px 20px;
+/* Infinity Scheduling */
+.InfinityScheduling_INFO img{
+    width: 30%;
     position: absolute;
-    top: 4%;
-    width: 24%;
-} */
+    top: 25%;
+    left: 3%;
+}
+
+/* BattleShip */
+.Battle_INFO img{
+    width: 25%;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+}
+
+.Battle_INFO .skill{
+    color: #ababab;
+}
+
+
+/* Quotes */
+.Quotes_INFO img{
+    width: 30%;
+    height:50%;
+    position: absolute;
+    top: 20%;
+    left: 3%;
+}
 
 .project_container h1{
     background: -webkit-linear-gradient(rgba(245,149,93,1.0), rgba(169,35,71,1.000));
@@ -453,56 +496,4 @@ nav .fas{
 
 .project_container .skill{
     font-size: 20px;
-}
-
-/* BattleShip */
-.Battle_INFO{
-    padding: 80px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.Battle_INFO .col1{
-    flex-basis: 35%;
-}
-
-.Battle_INFO .col2{
-    flex-basis: 65%;
-}
-
-.Battle_INFO img{
-    width: 25%;
-    position: absolute;
-    top: 12%;
-    left: 5%;
-}
-
-.Battle_INFO .skill{
-    color: #ababab;
-}
-
-
-/* Quotes */
-.Quotes_INFO{
-    padding: 80px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.Quotes_INFO .col1{
-    flex-basis: 35%;
-}
-
-.Quotes_INFO .col2{
-    flex-basis: 65%;
-}
-
-.Quotes_INFO img{
-    width: 30%;
-    height:50%;
-    position: absolute;
-    top: 20%;
-    left: 3%;
 }
